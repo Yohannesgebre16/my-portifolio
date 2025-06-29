@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Welecome from "./Pages/Welecome";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -6,20 +6,22 @@ import Contact from "./Pages/Contact";
 import SharedLayout from "./Pages/SharedLayout";
 import Notfound from "./Pages/Notfound";
 
-
+const basename = import.meta.env.MODE === "production"
+  ? "/my-portifolio"
+  : undefined;
 
 function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <div>
         <Routes>
           <Route path="/" element={<SharedLayout/>}>
-              <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/' element={<Welecome />} />
-          <Route path='/contact' element={<Contact />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/' element={<Welecome />} />
+            <Route path='/contact' element={<Contact />} />
           </Route>
-        <Route path="*" element={<Notfound/>}/>
+          <Route path="*" element={<Notfound/>}/>
         </Routes>
       </div>
     </Router>
