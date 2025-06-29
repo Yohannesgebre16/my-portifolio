@@ -6,9 +6,13 @@ import Contact from "./Pages/Contact";
 import SharedLayout from "./Pages/SharedLayout";
 import Notfound from "./Pages/Notfound";
 
-const basename = import.meta.env.MODE === "production"
-  ? "/my-portifolio"
-  : undefined;
+const isVercel = !!import.meta.env.VERCEL;
+const basename =
+  isVercel
+    ? undefined
+    : import.meta.env.MODE === "production"
+      ? "/my-portifolio"
+      : undefined;
 
 function App() {
   return (
