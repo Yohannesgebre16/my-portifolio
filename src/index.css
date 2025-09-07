@@ -1,1 +1,9 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+/* Tell Tailwind what "dark" means in v4+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Optional: you can also define other themes */
+@custom-variant theme-midnight (&:where([data-theme="midnight"], [data-theme="midnight"] *));
+@custom-variant theme-solarized (&:where([data-theme="solarized"], [data-theme="solarized"] *));
+@custom-variant theme-forest (&:where([data-theme="forest"], [data-theme="forest"] *));

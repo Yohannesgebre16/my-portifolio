@@ -1,43 +1,52 @@
-import { FaUserTie, FaArrowRight } from "react-icons/fa";
+import { 
+  SiReact, 
+  SiTailwindcss, 
+  SiJavascript, 
+  SiHtml5, 
+  SiCss3, 
+  SiNodedotjs, 
+  SiExpress, 
+  SiMongodb 
+} from 'react-icons/si';
+import { motion } from "framer-motion";
 
 export default function About() {
+  const skills = [
+    { icon: <SiMongodb className="text-green-600" />, label: "MongoDB" },
+    { icon: <SiExpress className="text-gray-700" />, label: "Express.js" },
+    { icon: <SiNodedotjs className="text-green-500" />, label: "Node.js" },
+    { icon: <SiHtml5 className="text-orange-600" />, label: "HTML5" },
+    { icon: <SiCss3 className="text-blue-600" />, label: "CSS3" },
+    { icon: <SiReact className="text-blue-500" />, label: "React" },
+    { icon: <SiTailwindcss className="text-blue-400" />, label: "TailwindCSS" },
+    { icon: <SiJavascript className="text-yellow-500" />, label: "JavaScript" },
+  ];
+
   return (
-    <div className="rounded-xl bg-gradient-to-br from-blue-400 to-indigo-400 min-h-screen flex justify-center items-center px-2">
-      <div className="w-full max-w-xl bg-white/30 backdrop-blur-lg rounded-3xl shadow-2xl p-5 sm:p-8 md:p-10 border border-indigo-800 hover:scale-105 hover:shadow-indigo-900 transition-transform duration-300">
-        <div className="flex flex-col items-center mb-4 sm:mb-6">
-          <div className="bg-indigo-600 rounded-full p-3 sm:p-4 shadow-lg mb-2 animate-bounce">
-            <FaUserTie className="text-white text-3xl sm:text-4xl" />
-          </div>
-          <h2 className="text-indigo-700 text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-1 sm:mb-2 drop-shadow-2xl">
-            About Me
-          </h2>
-          <span className="text-indigo-900 font-semibold text-base sm:text-lg text-center animate-pulse">
-            Passionate Developer & Creative Problem Solver
-          </span>
-        </div>
-        <div className="text-gray-800 leading-relaxed mb-6 sm:mb-8 text-center">
-          <p className="text-base sm:text-lg font-medium mb-3 sm:mb-4">
-            Hi! I’m <span className="text-indigo-700 font-bold">Yohannes Gebre</span>, a developer who loves crafting <span className="bg-indigo-100 px-1 rounded">clean</span> and <span className="bg-indigo-100 px-1 rounded">robust</span> code.
-          </p>
-          <p className="mb-3 sm:mb-4">
-            My expertise technologies are <span className="font-semibold text-indigo-700">HTML, CSS, JavaScript, Bootstrap, jQuery, React.js, Node.js (Express), and Tailwind CSS</span>. I thrive on turning ideas into impactful digital products with a focus on <span className="font-semibold text-indigo-700">user experience</span> and <span className="font-semibold text-indigo-700">beautiful interfaces</span>.
-          </p>
-          <p className="mb-3 sm:mb-4">
-            I’m a strong communicator, a team player, and I adapt quickly to new environments, challenges, and technologies.
-          </p>
-          <div className="text-black font-medium mt-4 sm:mt-6 hover:underline cursor-pointer transition">
-            Let’s build something fabulous together!
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <a
-            href="yohannesgebre390@gmail.com"
-            className="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-full shadow-lg hover:bg-indigo-800 transition-colors font-semibold text-sm sm:text-base"
+    <section className="min-h-screen flex flex-col items-center justify-center bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-500 px-6">
+      
+    
+      <h1 className="text-4xl font-bold mb-4">About Me</h1>
+      <p className="text-lg max-w-2xl text-center text-gray-600 dark:text-gray-300 mb-10">
+        I'm a MERN stack developer passionate about building scalable web apps, 
+        crafting smooth user experiences, and working with modern tools like 
+        React, Tailwind, and Node.js. Here's my core tech expertise:
+      </p>
+
+      {/* Skills Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        {skills.map((skill, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ scale: 1.2, rotate: 5 }}
+            whileTap={{ scale: 0.15 }}
+            className="flex flex-col items-center space-y-2 p-4 rounded-2xl shadow-md dark:shadow-lg bg-gray-50 dark:bg-gray-800 transition-colors duration-500"
           >
-            Hire Me <FaArrowRight />
-          </a>
-        </div>
+            <div className="text-6xl">{skill.icon}</div>
+            <span className="text-sm font-medium">{skill.label}</span>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,8 +2,8 @@ import { FaTelegram, FaPhone, FaHeart } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-400 to-indigo-400">
-      <div className="relative max-w-xl w-full bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl p-10 border border-indigo-800 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-900">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br   dark:bg-gray-900">
+      <div className="relative max-w-xl w-full bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl p-10 border border-indigo-800 transition-transform duration-300 scroll-auto hover:shadow-indigo-900">
         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
           <FaHeart className="text-pink-500 text-4xl animate-bounce" />
         </div>
