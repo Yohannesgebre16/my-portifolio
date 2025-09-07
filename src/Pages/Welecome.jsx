@@ -38,7 +38,7 @@ export default function Welecome() {
               "MERN Stack Developer",
               "Backend Enthusiast",
               "MongoDB Explorer",
-              "Learning Everyday 🚀",
+              "Learning Everyday ",
             ],
             autoStart: true,
             loop: true,
